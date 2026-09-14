@@ -3,7 +3,7 @@ import { Sidebar } from './components/Sidebar';
 import { SettingsModal } from './components/SettingsModal';
 import { CapabilitiesPanel } from './components/CapabilitiesPanel';
 import { Markdown } from './components/Markdown';
-import { loadSettings, saveSettings, type JohnAISettings } from './lib/settings';
+import { loadSettings, loadRuntimeConfig, saveSettings, type JohnAISettings } from './lib/settings';
 import type { ChatMessage, HealthState, Session, SkillInfo, ToolsetInfo } from './lib/types';
 import {
   checkHealth,
@@ -87,6 +87,17 @@ export default function App() {
     const t = window.setInterval(() => void refreshHealth(), 20000);
     return () => window.clearInterval(t);
   }, [refreshHealth]);
+
+  useEffect(() => {
+    void loadRuntimeConfig().then((cfg) => {
+      if (!cfg.baseUrl) return;
+      setSettings((prev) => {
+        const next = { ...prev, baseUrl: cfg.baseUrl! };
+        saveSettings(next);
+        return next;
+      });
+    });
+  }, []);
 
   useEffect(() => {
     if (!settings.apiKey) setSettingsOpen(true);
