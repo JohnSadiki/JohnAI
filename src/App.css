@@ -194,3 +194,45 @@ body {
   .sidebar.open { transform: translateX(0); }
   .icon-btn.menu { display: inline-flex; }
 }
+
+
+.nav-stack { display: flex; flex-direction: column; gap: 4px; margin: 8px 0; }
+.nav-item {
+  text-align: left; background: transparent; border: 1px solid transparent;
+  color: var(--text); padding: 10px 12px; border-radius: 12px; cursor: pointer;
+}
+.nav-item:hover { background: var(--bg-elev-2); }
+.nav-item.active { background: var(--bg-elev-2); border-color: var(--border); }
+.model-pill {
+  max-width: 42vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: 12px; padding: 6px 10px; border-radius: 999px; cursor: pointer;
+  background: var(--bg-elev-2); border: 1px solid var(--border); color: var(--muted);
+}
+.panel-scroll { flex: 1; overflow: auto; padding: 16px; }
+.panel { max-width: 960px; margin: 0 auto; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+.card.row { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; }
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.badge { font-size: 11px; margin-left: 8px; padding: 2px 8px; border-radius: 999px; background: var(--bg-elev-2); }
+.badge.ok { color: var(--ok); }
+.badge.warn { color: #ffb020; }
+.chip.clickable { cursor: pointer; text-align: left; color: inherit; font: inherit; }
+.chip.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.approval-card {
+  border: 1px solid rgba(255,176,32,.45); background: rgba(255,176,32,.08);
+  border-radius: 16px; padding: 12px 14px;
+}
+.steer-row { max-width: 860px; margin: 0 auto 8px; display: flex; gap: 8px; }
+.steer-row input {
+  flex: 1; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-elev);
+  color: var(--text); padding: 10px 12px; font: inherit;
+}
+.settings-form label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 13px; }
+.settings-form input {
+  border-radius: 12px; border: 1px solid var(--border); background: var(--bg);
+  color: var(--text); padding: 12px; font: inherit;
+}
+.ok-text { color: var(--ok); }
+.danger-btn.compact, .ghost-btn.compact { padding: 8px 10px; font-size: 12px; }
