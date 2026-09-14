@@ -1,0 +1,2 @@
+/* base reset lives mostly in App.css */
+button, input, textarea { font: inherit; }
